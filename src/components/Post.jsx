@@ -21,14 +21,27 @@ export function Post() {
 
       <div className={styles.content}>
         <p>Fala meu povo</p>
-        <p>Mano ta hard terminar essa task, mas eu envio ela ainda hoje. prometo 🌝</p>
-        <p><a href="">jane.design/doctorcare</a></p>
         <p>
-          <a href="">#AgoraVai!</a> {' '}
-          <a href="">#RumoAoSenio</a> {' '}
-          <a href="">#obrigadoRocketSeat</a> {' '}
+          Mano ta hard terminar essa task, mas eu envio ela ainda hoje. prometo
+          🌝
+        </p>
+        <p>
+          <a href="">jane.design/doctorcare</a>
+        </p>
+        <p>
+          <a href="">#AgoraVai!</a> <a href="">#RumoAoSenio</a>{" "}
+          <a href="">#obrigadoRocketSeat</a>{" "}
         </p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixe seu feedback</strong>
+        <textarea placeholder="Deixe um comentário" />
+
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
     </article>
   );
 }
