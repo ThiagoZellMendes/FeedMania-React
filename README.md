@@ -15,7 +15,7 @@ Aplicação de conceitos do React na Web.
 - [x] Post Component;
 - [x] Form Component;
 - [x] Comment Component;
-- [ ] Avartar Component; 
+- [x] Avartar Component; 
 - [ ] Reposive page;
 
 # :hammer: Funcionalidades do projeto
