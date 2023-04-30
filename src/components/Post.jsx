@@ -1,8 +1,22 @@
+import { useState } from "react";
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
-export function Post(props) {
+export function Post({ author, publishedAt, content }) {
+  const [comments, setComments] = useState(["Post muito bacana, heim?!"]);
+  const [newCommentText, setNewCommentText] = useState("");
+
+  function handleCreateNewComment() {
+    event.preventDefault();
+    setComments([...comments, newCommentText]);
+    setNewCommentText('')
+  }
+
+  function handleNewCommentChange() {
+    setNewCommentText(event.target.value);
+  }
+
   return (
     <article className={styles.post}>
       <header>
@@ -33,9 +47,14 @@ export function Post(props) {
         </p>
       </div>
 
-      <form className={styles.commentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea placeholder="Deixe um comentário" />
+        <textarea 
+        name='comment'
+        placeholder='Deixe um comentário'
+        value={newCommentText}
+        onChange={handleNewCommentChange} 
+        />
 
         <footer>
           <button type="submit">Publicar</button>
@@ -43,9 +62,9 @@ export function Post(props) {
       </form>
 
       <div className={styles.commentList}>
-        <Comment />
-        <Comment />
-        <Comment />
+        {comments.map((comment) => {
+          return <Comment key={Math.random()} content={comment} />;
+        })}
       </div>
     </article>
   );
