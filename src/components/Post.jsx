@@ -1,3 +1,5 @@
+import { format, formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 import { useState } from "react";
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
@@ -10,25 +12,38 @@ export function Post({ author, publishedAt, content }) {
   function handleCreateNewComment() {
     event.preventDefault();
     setComments([...comments, newCommentText]);
-    setNewCommentText('')
+    setNewCommentText("");
   }
 
   function handleNewCommentChange() {
     setNewCommentText(event.target.value);
   }
 
+  const publishedDateFormatted = format(
+    publishedAt,
+    "d 'de' LLLL 'ás' HH:mm'h'",
+    { locale: ptBR }
+  );
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src="https://github.com/ThiagoZellMendes.png" />
+          <Avatar src={author.avatarUrl} />
           <div className={styles.authorInfo}>
-            <strong>Thiago Mendes</strong>
-            <span>Mobile Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
-        <time title="11 de Maio às 08:50h" dateTime="2022-05-11 08:20:50">
-          Publicado há 2h
+        <time
+          title={publishedDateFormatted}
+          dateTime={publishedAt.toISOString()}
+        >
+          {publishedDateRelativeToNow}
         </time>
       </header>
 
@@ -49,11 +64,11 @@ export function Post({ author, publishedAt, content }) {
 
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea 
-        name='comment'
-        placeholder='Deixe um comentário'
-        value={newCommentText}
-        onChange={handleNewCommentChange} 
+        <textarea
+          name="comment"
+          placeholder="Deixe um comentário"
+          value={newCommentText}
+          onChange={handleNewCommentChange}
         />
 
         <footer>
