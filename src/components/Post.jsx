@@ -19,6 +19,13 @@ export function Post({ author, publishedAt, content }) {
     setNewCommentText(event.target.value);
   }
 
+  function deleteCommment(commentToDelete) {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete;
+    })
+    setComments(commentsWithoutDeletedOne)
+  }
+
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'ás' HH:mm'h'",
@@ -48,18 +55,17 @@ export function Post({ author, publishedAt, content }) {
       </header>
 
       <div className={styles.content}>
-        <p>Fala meu povo</p>
-        <p>
-          Mano ta hard terminar essa task, mas eu envio ela ainda hoje. prometo
-          🌝
-        </p>
-        <p>
-          <a href="">jane.design/doctorcare</a>
-        </p>
-        <p>
-          <a href="">#AgoraVai!</a> <a href="">#RumoAoSenio</a>{" "}
-          <a href="">#obrigadoRocketSeat</a>{" "}
-        </p>
+        {content.map((line) => {
+          if (line.type === "paragraph") {
+            return <p key={line.content}>{line.content}</p>;
+          } else if (line.type === "link") {
+            return (
+              <p key={line.content}>
+                <a href="#">{line.content}</a>
+              </p>
+            );
+          }
+        })}
       </div>
 
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
@@ -78,7 +84,7 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={Math.random()} content={comment} />;
+          return <Comment key={Math.random()} content={comment} deleteCommment={deleteCommment}/>;
         })}
       </div>
     </article>
