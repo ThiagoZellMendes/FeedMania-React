@@ -17,6 +17,7 @@ Aplicação de conceitos do React na Web.
 - [x] Comment Component;
 - [x] Avartar Component; 
 - [x] Reposive page;
+- [x] Apply TypeScript(Before was JavaScript)
 
 # :hammer: Funcionalidades do projeto
 
