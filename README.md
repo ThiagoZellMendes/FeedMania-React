@@ -1,7 +1,7 @@
 # IgniteFeed
 Aplicação de conceitos do React na Web.
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREENstyle=for-the-badge)
 
 ![Screenshot 2023-04-27 at 20 35 29](https://user-images.githubusercontent.com/64324862/235012703-bd270130-8ab9-4c40-80a4-4f8172d01b3f.png)
 
@@ -15,6 +15,8 @@ Aplicação de conceitos do React na Web.
 - [x] Post Component;
 - [x] Form Component;
 - [x] Comment Component;
+  - [x] Create a new comment;
+  - [x] Excluir comment;
 - [x] Avartar Component; 
 - [x] Reposive page;
 - [x] Apply TypeScript(Before was JavaScript)
@@ -22,5 +24,17 @@ Aplicação de conceitos do React na Web.
 # :hammer: Funcionalidades do projeto
 
 
-- `Funcionalidade 1:`  :construction: Projeto em construção :construction:
+- O primeiro projeto feito em React, para aplicação de praticas ensinadas no Ignite da RockteSeat;
+
+- Foram usadas as estrutura do React, como:
+  - O hook useState();
+  - Manipulação de arrays com estuturas como ".map()", ".filter()";
+  - tipagems com Typescript;
+  - Manipulação de formularios;
+  - Manipulação de datas(date-fns)
+  - aplicação de CSS com className;
+  - Componentização;
+  - O uso do NPM para aplicar libs externas no projeto como "date-fns", "phosphor-react";
+  
+  
 
