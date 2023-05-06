@@ -16,7 +16,8 @@ Aplicação de conceitos do React na Web.
 - [x] Form Component;
 - [x] Comment Component;
   - [x] Create a new comment;
-  - [x] Excluir comment;
+  - [x] Delete a comment;
+  - [x] Add "clap" a comment;
 - [x] Avartar Component; 
 - [x] Reposive page;
 - [x] Apply TypeScript(Before was JavaScript)
