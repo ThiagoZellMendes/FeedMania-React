@@ -9,8 +9,13 @@ export interface Content {
   content: string;
 }
 
-export interface PostProps {
+export interface PostType {
+  id: string
   author: Author;
   publishedAt: Date;
   content: Content[];
+}
+
+export interface postProps {
+  post: PostType
 }
