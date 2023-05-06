@@ -1,6 +1,8 @@
-export const posts = [
+import { PostType } from "./components/PostProps";
+
+export const posts: PostType[] = [
   {
-    id: 1,
+    id: "1",
     author: {
       avatarUrl: 'https://github.com/ThiagoZellMendes.png',
       name: 'Thiago Mendes',
@@ -14,7 +16,7 @@ export const posts = [
     publishedAt: new Date('2023-04-29 17:01:01')
   },
   {
-    id: 2,
+    id: "2",
     author: {
       avatarUrl: 'https://github.com/arianebrandao.png',
       name: 'Ariane Madalena Brandão',

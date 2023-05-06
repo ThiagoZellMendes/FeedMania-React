@@ -29,10 +29,10 @@ Aplicação de conceitos do React na Web.
 - Foram usadas as estrutura do React, como:
   - O hook useState();
   - Manipulação de arrays com estuturas como ".map()", ".filter()";
-  - tipagems com Typescript;
+  - Tipagems com Typescript;
   - Manipulação de formularios;
   - Manipulação de datas(date-fns)
-  - aplicação de CSS com className;
+  - Aplicação de CSS com className;
   - Componentização;
   - O uso do NPM para aplicar libs externas no projeto como "date-fns", "phosphor-react";
   
