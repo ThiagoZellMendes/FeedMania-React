@@ -1,4 +1,4 @@
-# IgniteFeed
+# FeedMania
 Aplicação de conceitos do React na Web.
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREENstyle=for-the-badge)
